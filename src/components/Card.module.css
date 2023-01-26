@@ -1,0 +1,16 @@
+.formatoDiv {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    width: 300px;
+}
+
+.h2 {
+    width: 300px;
+}
+
+.h2pieFoto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
