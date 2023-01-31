@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url('../public/rick-y-morty-con-sables-de-luz_3840x2160_xtrafondos.com.jpg');
   background-size: contain;
-  /* background-position: inherit; */
+  background-attachment: fixed;
 }
 
 code {

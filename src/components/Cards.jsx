@@ -1,9 +1,10 @@
 import Card from './Card';
-import characters from '../data';
+// import characters from '../data';
+import styles from './Cards.module.css'
 
 export default function Cards(props) {
    const { characters } = props;
-   return <div>
+   return <div className={styles.fomatoDiv}>
       {
          characters.map((char) => (
             <Card
