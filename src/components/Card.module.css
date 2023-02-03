@@ -1,12 +1,14 @@
 .formatoDiv {
     display: flex;
     justify-content: center;
+    
     /* align-content: center; */
     flex-direction: column;
     width: 300px;
-    margin: auton;
     background-color: rgb(216, 212, 250);
 }
+
+
 
 .h2 {
     width: 300px;

@@ -10,6 +10,7 @@ export default function Card(props) {
          <div className={estilos.h2pieFoto}>
             <h2 >{props.species}</h2>
             <h2 >{props.gender}</h2>
+            
          </div>
       </div>
    );

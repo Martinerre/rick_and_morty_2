@@ -4,7 +4,7 @@ import styles from './Cards.module.css'
 
 export default function Cards(props) {
    const { characters } = props;
-   return <div className={styles.fomatoDiv}>
+   return <div className={styles.formatDiv}>
       {
          characters.map((char) => (
             <Card
@@ -13,7 +13,7 @@ export default function Cards(props) {
                species={char.species}
                gender={char.gender}
                image={char.image}
-               onClose={() => alert("Emulamos que se cierra la card")}
+               onClose={() => props.onClose(char.id)}
             />
          )
             // <ul>
