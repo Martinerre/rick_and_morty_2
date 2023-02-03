@@ -1,9 +1,10 @@
 import './App.css'
-import SearchBar from './components/SearchBar.jsx'
-import Nav from './components/Nav'
+import Nav from './components/Nav/Nav'
+import Cards from './components/Cards/Cards'
+import About from './components/About/About'
+import Detail from './components/Detail/Detail'
 import { useState } from 'react'
-import Cards
-  from './components/Cards'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
 
@@ -14,9 +15,9 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         if (data.name) {
-          setCharacters((oldChars) => [...oldChars, data]);
+          setCharacters((characters) => [...characters, data]);
         } else {
-          window.alert('No hay personajes con ese ID');
+          alert('No hay personajes con ese ID');
         }
       });
   }
@@ -33,17 +34,13 @@ function App() {
 
   return (
     <div className='App' style={{ padding: '25px' }}>
-
+      <Nav onSearch={onSearch} random={random} />
       <Routes>
-        <Route path='' element={ } />
+        <Route exact path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/detail/:detailId" element={<Detail />} />
+        {/* <Route path="*" element={<Error />}></Route> */}
       </Routes>
-
-      <div>
-        <Nav onSearch={onSearch} random={random} />
-      </div>
-      <div>
-        <Cards characters={characters} onClose={onClose} />
-      </div>
     </div>
   )
 }

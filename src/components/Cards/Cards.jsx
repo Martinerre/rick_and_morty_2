@@ -1,9 +1,9 @@
-import Card from './Card';
-// import characters from '../data';
+import Card from '../Card/Card';
 import styles from './Cards.module.css'
 
 export default function Cards(props) {
    const { characters } = props;
+   let i=0; 
    return <div className={styles.formatDiv}>
       {
          characters.map((char) => (
@@ -14,14 +14,10 @@ export default function Cards(props) {
                gender={char.gender}
                image={char.image}
                onClose={() => props.onClose(char.id)}
+               key={i++}
             />
          )
-            // <ul>
-            //    <h3>{char.name}</h3>
-            //    <h3>{char.species}</h3>
-            //    <h3>{char.gender}</h3>
-            //    <image src={char.image} />
-            // </ul>
+
          )
       }
    </div>;
