@@ -7,10 +7,8 @@ import About from "../About/About";
 export default function Nav(props) {
     return (
         <div>
-
-            <Link to='./About' element={<About />}/>
-            <SearchBar
-                 onSearch={props.onSearch} random={props.random} />
+            <SearchBar onSearch={props.onSearch} random={props.random} />
+            <Link to='./About' element={<About />}>About</Link>
             <h2>Elije tu personaje</h2>
         </div>
     )
