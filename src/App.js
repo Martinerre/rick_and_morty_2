@@ -36,8 +36,8 @@ function App() {
     <div className='App' style={{ padding: '25px' }}>
       <Nav onSearch={onSearch} random={random} />
       <Routes>
-        <Route exact path="/home" element={<Cards characters={characters} onClose={onClose} />} />
-        <Route exact path="/about" element={<About />} />
+        <Route exact path="/" element={<Cards characters={characters} onClose={onClose} />} />
+        <Route path="/about" element={<About />} />
         <Route path="/detail/:detailId" element={<Detail />} />
         {/* <Route path="*" element={<Error />}></Route> */}
       </Routes>

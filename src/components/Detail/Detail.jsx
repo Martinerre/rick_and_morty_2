@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import styles from './Detail.css'
+import { Link } from "react-router-dom";
 
 export default function Detail() {
     const { detailId } = useParams();
@@ -18,50 +20,68 @@ export default function Detail() {
         fetch(`https://rickandmortyapi.com/api/character/${detailId}`)
             .then((response) => response.json())
             .then((char) => {
-                console.log(`char Detail ${char}`)
                 if (char.name) {
                     setCharacter(char);
                 } else {
-                    alert("No hay personajes con ese ID");
+                    window.alert("No hay personajes con ese ID 1");
                 }
             })
             .catch((err) => {
-                alert("No hay personajes con ese ID");
+                window.alert("No hay personajes con ese ID");
             });
-    },[detailId]);
+        return setCharacter({});
+    }, [detailId]);
 
     return (
-        <div>
-            <div>
-                <div>
-                    {character.name && (
-                        <p>
-                            <b>Name:</b> &#160; {character.name}
-                        </p>
-                    )}
-                    {character.status && (
-                        <p>
-                            <b>Status:</b> &#160; {character.status}
-                        </p>
-                    )}
-                    {character.specie && (
-                        <p>
-                            <b>Specie:</b> &#160; {character.specie}
-                        </p>
-                    )}
-                    {character.gender && (
-                        <p>
-                            <b>Gender:</b> &#160; {character.gender}
-                        </p>
-                    )}
-                    {character.origin && (
-                        <p>
-                            <b>Origin:</b> &#160; {character.origin}
-                        </p>
-                    )}
+
+        <div className={styles.div}>
+            <div className={styles.detail}>
+                <div className={styles.detail2}>
+                    <h2 className={styles.nombre}>{character.name}</h2>
+                    <h3 className={styles.default}>Status: {character.status}</h3>
+                    <h3 className={styles.default}>Especie: {character.species}</h3>
+                    <h3 className={styles.default}>Género: {character.gender}</h3>
+                    <h3 className={styles.default}>Origen: {character.origin?.name}</h3>
+
                 </div>
             </div>
-            <button onClick={() => navigate('/home')}>Back To Home</button>
+            <div className={styles.imagen}>
+                <img src={character.image} alt='No encontrado' className={styles.img} />
+                <Link to={'/home'}>
+                    <button className={styles.button}>Volver</button>
+                </Link>
+            </div>
         </div>
+       
+    //    <div>
+    //         <div>
+    //             {character.name && (
+    //                 <p>
+    //                     <b>Name:</b>  {character.name}
+    //                 </p>
+    //             )}
+    //             {character.status && (
+    //                 <p>
+    //                     <b>Status:</b> {character.status}
+    //                 </p>
+    //             )}
+    //             {character.specie && (
+    //                 <p>
+    //                     <b>Specie:</b> {character.specie}
+    //                 </p>
+    //             )}
+    //             {character.gender && (
+    //                 <p>
+    //                     <b>Gender:</b> {character.gender}
+    //                 </p>
+    //             )}
+    //             {character.origin && (
+    //                 <p>
+    //                     <b>Origin:</b> {character.origin}
+    //                 </p>
+    //             )}
+    //         </div>
+    //         <button onClick={() => navigate('/home')}>Back To Home</button>
+    //     </div>
     );
 }
