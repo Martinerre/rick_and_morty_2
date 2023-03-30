@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import styles from './Detail.css'
 import { Link } from "react-router-dom";
+import styles from './Detail.css'
 
 export default function Detail() {
     const { detailId } = useParams();
@@ -47,7 +47,7 @@ export default function Detail() {
             </div>
             <div className={styles.imagen}>
                 <img src={character.image} alt='No encontrado' className={styles.img} />
-                <Link to={'/home'}>
+                <Link to={'/'}>
                     <button className={styles.button}>Volver</button>
                 </Link>
             </div>
