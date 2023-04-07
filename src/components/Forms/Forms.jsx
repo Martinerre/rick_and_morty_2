@@ -1,60 +1,64 @@
 import React from "react";
-import styles from "./Forms.module.css"
+// import styles from "./Forms.module.css"
 
 const regexPwd = /./;
 
-export function validate(inputs) {
+export function validate(userData) {
     let errors = {};
-    if (!inputs.name) errors.name = 'Se requiere un nombre';
-    if (!regexPwd.test(inputs.pwd)) errors.pwd = 'Password incorrecto';
+    if (!userData.username) errors.username = 'Se requiere un nombre';
+    if (!regexPwd.test(userData.pasword)) errors.pasword = 'Password incorrecto';
     return errors;
 }
 
 export default function Form(props) {
-
-    const [inputs, setInputs] = React.useState({
-        name: '',
-        pwd: '',
+    // console.log(props);
+    const [userData, setUserData] = React.useState({
+        username: '',
+        pasword: '',
     })
 
     const [errors, setErrors] = React.useState({
-        name: '',
-        pwd: '',
+        username: '',
+        pasword: '',
     })
     
-    const handelChange = (evento) => {
-        // console.log(evento.target)
-        setInputs({ ...inputs, [evento.target.name]: evento.target.value })
-        setErrors(validate({ ...inputs, [evento.target.name]: evento.target.value }))
+    const handleChange = (evento) => {
+        // console.log(evento.target)   
+        setUserData({ ...userData, [evento.target.name]: evento.target.value })
+        setErrors(validate({ ...userData, [evento.target.name]: evento.target.value }))
     }
 
     const handleSubmit = (evento) => {
         evento.preventDefault(); //previene la carga de las lineas siguientes
+
         let arrayConvertido = Object.entries(errors)
         // console.log(arrayConvertido);
+
         if (arrayConvertido.length === 0) {
             alert('Datos completos')
             setErrors(validate({
-                name: '',
-                pwd: '',
+                username: '',
+                pasword: '',
             }));
-            setInputs({
-                name: '',
-                pwd: '',
+            setUserData({
+                username: '',
+                pasword: '',
             })
         }
         else { alert('Debe llenar todos los campos') }
+        props.login(userData) //aqui habilita el navigation
+        console.log(userData);
     }
 
     return <div>
         <form onSubmit={handleSubmit}>
             {/* htmlFor conecta con id, de modo que cuando hagamos clic pase al input */}
             <label htmlFor="name">Nombre:</label>
-            <input id='name' type="text" name="name" placeholder="Escribe tu usuario..." value={inputs.name} onChange={handelChange} className={errors.name && 'warning'} /> <br />
-            <p className='danger'>{errors.name}</p>
-            <label htmlFor="pwd">Password:</label>
-            <input id='pwd' type="text" name="pwd" placeholder='Escribe el password...' value={inputs.pwd} onChange={handelChange} className={errors.pwd && 'warning'} /> <br />
-            <p className='danger'>{errors.pwd}</p>
+            <input id='name' type="text" name="username" placeholder="Escribe tu usuario..." value={userData.name} onChange={handleChange} className={errors.username && 'warning'} /> <br />
+            <p className='danger'>{errors.username}</p>
+            <label htmlFor="pasword">Password:</label>
+            <input id='pasword' type="text" name="pasword" placeholder='Escribe el password...' value={userData.pasword} onChange={handleChange} className={errors.pasword && 'warning'} /> <br />
+            <p className='danger'>{errors.pasword}</p>
             <button type='submit' >Enviar</button>
         </form>
     </div>
