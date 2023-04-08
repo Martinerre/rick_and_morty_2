@@ -6,6 +6,7 @@ import Detail from './components/Detail/Detail'
 import Error from './components/Error/Error'
 import Forms from './components/Forms/Forms'
 import styles from '../src/App.css'
+import Form from './components/Forms/Forms'
 import { useState } from 'react'
 import { Outlet, Route, Routes } from 'react-router-dom'
 import { useNavigate, useLocation } from 'react-router-dom'
@@ -39,23 +40,24 @@ function App() {
 
   // -------------------
   const [access, setAccess] = useState(false)
-  const username = 'mm'
+  const username = 'martin'
   const password = 'mm'
 
   function login(userData) {
     if (userData.pasword && userData.username) {
       if (userData.pasword === password && userData.username === username) {
         setAccess(true);
-        navigate('/');
+        navigate('/home');
       } else {
         alert('No existen registros con esos datos');
       }
     }
   }
-
-  // function logout() {
-  //   setAccess(false);
-  // }
+  
+  // eslint-disable-next-line
+  function logout() {
+    setAccess(false);
+  }
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -66,7 +68,6 @@ function App() {
   }, [access]);
 
   if (location.pathname === '/') {
-    console.log('llega?'); //hasta aca llega
     return (
       <div className='App' style={{ padding: '25px' }}>
         <Routes>
@@ -79,7 +80,8 @@ function App() {
       <div className='App' style={{ padding: '25px' }}>
         <Nav onSearch={onSearch} random={random} />
         <Routes>
-          <Route exact path="/" element={<Cards characters={characters} onClose={onClose} />} />
+          <Route path="/" element={<Form />} />
+          <Route exact path="/home" element={<Cards characters={characters} onClose={onClose} />} />
           <Route path="/about" element={<About />} />
           <Route path="/detail/:detailId" element={<Detail />} />
           <Route path="*" element={<Error />}></Route>

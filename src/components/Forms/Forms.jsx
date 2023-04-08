@@ -35,7 +35,7 @@ export default function Form(props) {
         // console.log(arrayConvertido);
 
         if (arrayConvertido.length === 0) {
-            alert('Datos completos')
+            // alert('Datos completos')
             setErrors(validate({
                 username: '',
                 pasword: '',
