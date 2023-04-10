@@ -1,7 +1,7 @@
+import styles from './Detail.module.css'
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import styles from './Detail.css'
 
 export default function Detail() {
     const { detailId } = useParams();
@@ -42,14 +42,13 @@ export default function Detail() {
                     <h3 className={styles.default}>Especie: {character.species}</h3>
                     <h3 className={styles.default}>Género: {character.gender}</h3>
                     <h3 className={styles.default}>Origen: {character.origin?.name}</h3>
-
+                <Link to={'/home'}>
+                    <button className={styles.button}>Volver</button>
+                </Link>
                 </div>
             </div>
             <div className={styles.imagen}>
                 <img src={character.image} alt='No encontrado' className={styles.img} />
-                <Link to={'/'}>
-                    <button className={styles.button}>Volver</button>
-                </Link>
             </div>
         </div>
        

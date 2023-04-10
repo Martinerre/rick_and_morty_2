@@ -1,3 +1,4 @@
+import styles from './Searchbar.module.css'
 import { useState } from "react";
 
 export default function SearchBar(props) {
@@ -10,13 +11,9 @@ export default function SearchBar(props) {
 
    return (
       <div>
-         <input type="search" onChange={handleSearch} />
-         <button onClick={() => props.onSearch(character)}>
-            Agregar
-         </button>
-         <button onClick={props.random}>
-            Random Character
-         </button>
+         <input className={styles.input} type="search" onChange={handleSearch} />
+         <button className={styles.button} onClick={() => props.onSearch(character)}> Agregar </button>
+         <button className={styles.button} onClick={props.random}> Random Character </button>
       </div>
    );
 }

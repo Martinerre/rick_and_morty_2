@@ -23,7 +23,6 @@ export default function Form(props) {
     })
     
     const handleChange = (evento) => {
-        // console.log(evento.target)   
         setUserData({ ...userData, [evento.target.name]: evento.target.value })
         setErrors(validate({ ...userData, [evento.target.name]: evento.target.value }))
     }
@@ -32,7 +31,6 @@ export default function Form(props) {
         evento.preventDefault(); //previene la carga de las lineas siguientes
 
         let arrayConvertido = Object.entries(errors)
-        // console.log(arrayConvertido);
 
         if (arrayConvertido.length === 0) {
             // alert('Datos completos')

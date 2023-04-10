@@ -1,29 +1,23 @@
-.formatoDiv {
+.div {
     display: flex;
-    justify-content: space-between;
+    
+    
+    align-items: center;
+    justify-content: space-around;
+    width: 600px;
+    margin: 8px;
+
     border:1px solid #ffaa22;
     border-radius:6px;
-    /* align-content: center; */
-    flex-direction: column;
-    width: 300px;
+    align-content: center;
+    flex-direction: row;
+    /* width: 50vw; */
     background-color: #ffec64;
     margin: 5px;
     padding: 5px;
 }
 
-.h2 {
-    width: auto;
-    color: black;
-    font-size: 24px;
-}
-
-.h2pieFoto {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.x {
+.button {
 	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
 	background:linear-gradient(to bottom, #79bbff 5%, #b0d8f1 100%);
 	background-color:#79bbff;
@@ -33,25 +27,31 @@
 	cursor:pointer;
 	color:#000000;
 	font-family:Arial;
-	font-size:10px;
+	font-size:15px;
 	font-weight:bold;
-	padding:6px;
+	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #528ecc;
 }
-.x:hover {
+.button:hover {
 	background:linear-gradient(to bottom, #b0d8f1 5%, #79bbff 100%);
 	background-color:#b0d8f1;
 }
-.x:active {
+.button:active {
 	position:relative;
 	top:1px;
 }
 
-.top {
-    display: flex;
-    align-content: stretch;  
-    align-items: center;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+.imagen {
+    box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background:linear-gradient(to bottom, #79bbff 5%, #b0d8f1 100%);
+	background-color:#79bbff;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	padding:6px 24px;
+}
+
+.img {
+    border-radius:6px;
 }
