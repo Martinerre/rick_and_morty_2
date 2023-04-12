@@ -14,6 +14,7 @@ export default function Detail() {
         image: "",
     });
 
+    // eslint-disable-next-line
     const navigate = useNavigate();
 
     useEffect(() => {

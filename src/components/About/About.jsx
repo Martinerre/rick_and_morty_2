@@ -1,9 +1,9 @@
-import './About.css';
+import styles from './About.module.css';
 import React from "react";
 
 export default function About(props) {
     return (
-        <div className='div'> 
+        <div className={styles.formatoDiv}> 
             <h2>Sobre mi y la app</h2>
             <p>Esta app es parte de una homework del bootcamp que estoy cursando de Desarrollador Full Stack de Henry; mi nombre es Martin y espero disfruten viendo y conociendo los personajes de la serie Rick & Morty.</p>
         </div>

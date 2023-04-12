@@ -1,5 +1,5 @@
 import React from "react";
-// import styles from "./Forms.module.css"
+import styles from "./Forms.module.css"
 
 const regexPwd = /./;
 
@@ -48,16 +48,17 @@ export default function Form(props) {
         console.log(userData);
     }
 
-    return <div>
-        <form onSubmit={handleSubmit}>
+    return <div >
+        <form  onSubmit={handleSubmit}>
             {/* htmlFor conecta con id, de modo que cuando hagamos clic pase al input */}
-            <label htmlFor="name">Nombre:</label>
-            <input id='name' type="text" name="username" placeholder="Escribe tu usuario..." value={userData.name} onChange={handleChange} className={errors.username && 'warning'} /> <br />
-            <p className='danger'>{errors.username}</p>
-            <label htmlFor="pasword">Password:</label>
-            <input id='pasword' type="text" name="pasword" placeholder='Escribe el password...' value={userData.pasword} onChange={handleChange} className={errors.pasword && 'warning'} /> <br />
-            <p className='danger'>{errors.pasword}</p>
-            <button type='submit' >Enviar</button>
+            <label htmlFor="name" className={styles.name}>Nombre:</label>
+            <input id='name' type="text" name="username" placeholder="Escribe tu usuario..." value={userData.name} onChange={handleChange} className={errors.username ? styles.warning : styles.input} /> <br />
+            <p className={styles.danger}>{errors.username}</p>
+            <label htmlFor="pasword" className={styles.name} >Password:</label>
+            <input id='pasword' type="text" name="pasword" placeholder='Escribe el password...' value={userData.pasword} onChange={handleChange} className={errors.username ? styles.warning : styles.input} /> <br />
+            <p className={styles.danger}>{errors.pasword}</p>
+            <button className={styles.button} type='submit' >Enviar</button>
+            <p>Para pruebas: Nombre: martin Password: mm</p>
         </form>
     </div>
 }

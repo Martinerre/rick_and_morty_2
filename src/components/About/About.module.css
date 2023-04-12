@@ -1,0 +1,16 @@
+.div {
+    color:rgb(0, 0, 0)
+}
+
+.formatoDiv {
+    display: flex;
+    justify-content: center;
+    border:1px solid #ffaa22;
+    border-radius:6px;
+    /* align-content: center; */
+    flex-direction: column;
+    width: 300px;
+    background-color: #ffec64;
+    margin: 5px;
+    padding: 5px;
+}

@@ -53,7 +53,7 @@ function App() {
       }
     }
   }
-  
+
   // eslint-disable-next-line
   function logout() {
     setAccess(false);
@@ -81,10 +81,10 @@ function App() {
         <Nav onSearch={onSearch} random={random} />
         <Routes>
           <Route path="/" element={<Form />} />
-          <Route exact path="/home" element={<Cards characters={characters} onClose={onClose} />} />
           <Route path="/about" element={<About />} />
+          <Route exact path="/home" element={<Cards characters={characters} onClose={onClose} />} />
           <Route path="/detail/:detailId" element={<Detail />} />
-          <Route path="*" element={<Error />}></Route>
+          <Route path="*" element={<Error />} />
         </Routes>
         <Outlet />
       </div>
