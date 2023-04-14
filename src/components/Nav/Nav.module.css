@@ -4,6 +4,10 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
+	/* background-image: url("/public/klipartz.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center; */
 }
 
 .search {
@@ -11,7 +15,6 @@
     justify-content: flex-end;
     align-items: center;
     padding-right: 15px;
-	
 }
 
 .h2 {
@@ -43,10 +46,14 @@
 	top:1px;
 }
 
-
 .links {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 15px;
+}
+
+.activeStyle {
+	font: "bold";
+     color: "red"
 }

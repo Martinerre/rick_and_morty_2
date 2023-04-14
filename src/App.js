@@ -3,7 +3,7 @@ import Nav from './components/Nav/Nav'
 import Cards from './components/Cards/Cards'
 import About from './components/About/About'
 import Detail from './components/Detail/Detail'
-import Error from './components/Error/Error'
+import NotFound from './components/NotFound/NotFound'
 import Forms from './components/Forms/Forms'
 import styles from '../src/App.css'
 import Form from './components/Forms/Forms'
@@ -72,7 +72,7 @@ function App() {
       <div className='App' style={{ padding: '25px' }}>
         <Routes>
           <Route path='/' element={<Forms login={login} className={styles.form} />} />
-          <Route path=':404' element={<Error />} />
+          <Route path=':404' element={<NotFound />} />
         </Routes>
       </div>)
   } else {
@@ -80,11 +80,11 @@ function App() {
       <div className='App' style={{ padding: '25px' }}>
         <Nav onSearch={onSearch} random={random} />
         <Routes>
-          <Route path="/" element={<Form />} />
+          <Route exact path="/" element={<Form />} />
           <Route path="/about" element={<About />} />
           <Route exact path="/home" element={<Cards characters={characters} onClose={onClose} />} />
           <Route path="/detail/:detailId" element={<Detail />} />
-          <Route path="*" element={<Error />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Outlet />
       </div>

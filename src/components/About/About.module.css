@@ -1,16 +1,42 @@
-.div {
-    color:rgb(0, 0, 0)
+.formatoDiv {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid #ffaa22;
+    border-radius:6px;
+    flex-direction: column;
+    width: 300px;
+    background-color: #ffec64;
+    margin: 5px;
+    padding: 5px */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 600px;
+    margin: 8px;
+    border:1px solid #ffaa22;
+    border-radius:6px;
+    align-content: center;
+    flex-direction: row;
+    /* width: 50vw; */
+    background-color: #ffec64;
+    margin: 5px;
+    padding: 5px;
 }
 
-.formatoDiv {
+.formatoFoto {
+    background-image: url("/imagenes/io.jpg");
+    
+    width: 600px;
     display: flex;
     justify-content: center;
-    border:1px solid #ffaa22;
+    border:1px solid #359aff;
     border-radius:6px;
     /* align-content: center; */
     flex-direction: column;
     width: 300px;
-    background-color: #ffec64;
+    background-color: #79bbff;
     margin: 5px;
     padding: 5px;
 }
