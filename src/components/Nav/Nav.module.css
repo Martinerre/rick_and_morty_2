@@ -9,18 +9,15 @@
 	background-repeat: no-repeat;
 	background-position: center; */
 }
-
 .search {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding-right: 15px;
 }
-
 .h2 {
 	margin-right: 7px;
 }
-
 .button {
 	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
 	background:linear-gradient(to bottom, #79bbff 5%, #b0d8f1 100%);
@@ -45,15 +42,30 @@
 	position:relative;
 	top:1px;
 }
-
 .links {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 15px;
 }
-
 .activeStyle {
 	font: "bold";
      color: "red"
+}
+
+ @media (max-width: 760px) {
+    .nav,.search {
+      flex-wrap: nowrap;
+	  flex-direction: column-reverse;
+    }
+	.search {
+		flex-direction: column;
+		padding-bottom: 2vw;
+	}
+}
+@media (max-width: 370px) {
+	.links {
+		flex-wrap: nowrap;
+	  flex-direction: column-reverse;
+	}
 }

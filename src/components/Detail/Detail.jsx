@@ -31,7 +31,7 @@ export default function Detail() {
                 window.alert("No hay personajes con ese ID");
             });
         return setCharacter({});
-    }, [detailId]);
+    }, [detailId]); //valor proveniente de las props o el estado 
 
     return (
 

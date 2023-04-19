@@ -21,7 +21,7 @@ export default function Form(props) {
         username: '',
         pasword: '',
     })
-    
+
     const handleChange = (evento) => {
         setUserData({ ...userData, [evento.target.name]: evento.target.value })
         setErrors(validate({ ...userData, [evento.target.name]: evento.target.value }))
@@ -48,8 +48,8 @@ export default function Form(props) {
         console.log(userData);
     }
 
-    return <div >
-        <form  onSubmit={handleSubmit}>
+    return <div className={styles.all} >
+        <form onSubmit={handleSubmit}>
             {/* htmlFor conecta con id, de modo que cuando hagamos clic pase al input */}
             <label htmlFor="name" className={styles.name}>Nombre:</label>
             <input id='name' type="text" name="username" placeholder="Escribe tu usuario..." value={userData.name} onChange={handleChange} className={errors.username ? styles.warning : styles.input} /> <br />
@@ -58,7 +58,16 @@ export default function Form(props) {
             <input id='pasword' type="text" name="pasword" placeholder='Escribe el password...' value={userData.pasword} onChange={handleChange} className={errors.username ? styles.warning : styles.input} /> <br />
             <p className={styles.danger}>{errors.pasword}</p>
             <button className={styles.button} type='submit' >Enviar</button>
+            <div className={styles.img} >
+                <img srcset="klipartz.png 320w,
+                            klipartz.png 480w,
+                            klipartz.png 800w"
+                    sizes="(max-width: 400px) 200px,
+                            (max-width: 600px) 250px,
+                            480px"
+                    src="klipartz.png" alt="imayen" />
+            </div>
             <p>Para pruebas: Nombre: martin Password: mm</p>
         </form>
     </div>
-}
+} 

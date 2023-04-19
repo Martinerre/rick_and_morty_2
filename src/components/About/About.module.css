@@ -28,7 +28,7 @@
 .formatoFoto {
     background-image: url("/imagenes/io.jpg");
     
-    width: 600px;
+    
     display: flex;
     justify-content: center;
     border:1px solid #359aff;

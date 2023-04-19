@@ -10,7 +10,7 @@ export default function Nav(props) {
     return (
         <div className={styles.nav}>
             <div className={styles.search}>
-                <img src="public/" alt="" />
+                {/* <img src="public/" alt="imagen?" /> */}
                 <h2 className={styles.h2}
                     title="Introduce un numero, luego Agregar, o elije un personaje al azar" >
                         Elije tu personaje  </h2>

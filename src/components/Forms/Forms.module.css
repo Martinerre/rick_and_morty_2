@@ -14,17 +14,14 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #528ecc;
 }
-
 .button:hover {
     background:linear-gradient(to bottom, #b0d8f1 5%, #79bbff 100%);
     background-color:#b0d8f1;
 }
-
 .button:active {
 	position:relative;
 	top:1px;
 }
-
 .name {
 	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
 	background:linear-gradient(to bottom, #79bbff 5%, #b0d8f1 100%);
@@ -41,7 +38,6 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #528ecc;
 }
-
 .input {
     box-shadow:inset 0px 1px 0px 0px #bbdaf7;
 	background:linear-gradient(to bottom, #79bbff 5%, #b0d8f1 100%);
@@ -58,7 +54,6 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #528ecc;
 }
-
 .warning {
     box-shadow:inset 0px 1px 0px 0px #bbdaf7;
 	background:linear-gradient(to bottom, #79bbff 5%, #b0d8f1 100%);
@@ -77,9 +72,20 @@
 
 
 }
-
 .danger {
   font-size: 20px;
   color: red;
   /* margin-left: 1em; */
+}
+.all {
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: center;
+}
+@media (max-width: 670px ) {
+	.img, .all {
+		/* flex-wrap: nowrap; */
+	  /* flex-direction: column-reverse; */
+	  justify-content: center;
+	}
 }
