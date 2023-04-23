@@ -7,6 +7,7 @@ import NotFound from './components/NotFound/NotFound'
 import Forms from './components/Forms/Forms'
 import styles from '../src/App.css'
 import Form from './components/Forms/Forms'
+import Favorites from './components/Favorites/Favorites'
 import { useState } from 'react'
 import { Outlet, Route, Routes } from 'react-router-dom'
 import { useNavigate, useLocation } from 'react-router-dom'
@@ -84,6 +85,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route exact path="/home" element={<Cards characters={characters} onClose={onClose} />} />
           <Route path="/detail/:detailId" element={<Detail />} />
+          <Route path='/favorites' element={<Favorites />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Outlet />

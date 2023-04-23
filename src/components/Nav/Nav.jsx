@@ -4,6 +4,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import About from "../About/About";
 import Cards from "../Cards/Cards";
 import Form from "../Forms/Forms";
+import Favorites from '../Favorites/Favorites';
 import { Link, NavLink } from 'react-router-dom';
 
 export default function Nav(props) {
@@ -19,6 +20,7 @@ export default function Nav(props) {
             <div className={styles.links}>
                 <NavLink activeStyle={styles.activeStyle} to='/home' className={styles.button} element={<Cards />}>Home</NavLink>
                 <Link to='./About' className={styles.button} element={<About />}>About</Link>
+                <Link to='./Favorites' className={styles.button} element={<Favorites />}>Favorites</Link>
                 <Link to='/' className={styles.button} element={<Form />}>Logout</Link>
             </div>
         </div>

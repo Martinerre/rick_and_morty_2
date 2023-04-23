@@ -1,12 +1,46 @@
 import React from 'react';
 import styles from './Card.module.css';
-import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
+import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { addFav, deleteFav } from '../../redux/actions';
 
-export default function Card(props) {
+
+export function Card(props) {
+
+   const [isFav, setIsFav] = useState(false)
+   const location = useLocation()
+
+   function handleFavorite() {
+      if (isFav) {
+         setIsFav(false);
+         props.deleteFav(props.id)
+      } else {
+         setIsFav(true);
+         props.addFav(props)
+      }
+   }
+
+   useEffect(() => {
+      props.myFavorites.forEach((fav) => {
+         if (fav.id === props.id) {
+            setIsFav(true);
+         }
+      });
+      // eslint-disable-next-line
+   }, [myFavorites]);
+
    return (
       <div className={styles.formatoDiv}>
          <div className={styles.top}>
-            <button className={styles.x} onClick={props.onClose}>X</button>
+            {location.pathname === '/home'
+               ? <button className={styles.x} onClick={props.onClose}>X</button>
+               : null}
+            
+               isFav
+                  ? (<button onClick={handleFavorite}>❤️</button>)
+                  : (<button onClick={handleFavorite}>🤍</button>)
+
             <Link to={`/detail/${props.id}`}>
                <h5 className={styles.h2}>{props.name}</h5>
             </Link>
@@ -21,3 +55,18 @@ export default function Card(props) {
       </div>
    );
 }
+
+export function mapDispatchToProps(dispatch) {
+   return {
+      addFav: (id) => dispatch(addFav(id)),
+      deleteFav: (id) => dispatch(deleteFav(id))
+   }
+}
+
+export function mapStateToProps(state) {
+   return {
+      myFavorites: state.myFavorites
+   }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Card);

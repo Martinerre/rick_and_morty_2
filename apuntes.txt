@@ -1,2 +1,5 @@
 para server:
-serve -s build
+server -s build
+
+Responsive:
+MDN: Imagenes adaptables

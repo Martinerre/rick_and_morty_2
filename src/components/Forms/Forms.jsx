@@ -67,7 +67,7 @@ export default function Form(props) {
                             480px"
                     src="klipartz.png" alt="imayen" />
             </div>
-            <p>Para pruebas: Nombre: martin Password: mm</p>
+            <p>Para pruebas:  Nombre: martin Password: mm</p>
         </form>
     </div>
 } 
