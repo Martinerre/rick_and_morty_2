@@ -18,7 +18,7 @@ export default function Nav(props) {
                 <SearchBar onSearch={props.onSearch} random={props.random} />
             </div>
             <div className={styles.links}>
-                <NavLink activeStyle={styles.activeStyle} to='/home' className={styles.button} element={<Cards />}>Home</NavLink>
+                <NavLink to='/home' className={styles.button} element={<Cards />}>Home</NavLink>
                 <Link to='./About' className={styles.button} element={<About />}>About</Link>
                 <Link to='./Favorites' className={styles.button} element={<Favorites />}>Favorites</Link>
                 <Link to='/' className={styles.button} element={<Form />}>Logout</Link>

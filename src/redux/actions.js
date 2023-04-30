@@ -1,10 +1,10 @@
 import { ADD_FAV, DELETE_FAV } from "./types";
 // import axios from 'axios'
 
-export function addFav(product) {
+export function addFav(char) {
     return {
         type: ADD_FAV,
-        payload: product
+        payload: char
     }
 };
 export function deleteFav(id) {

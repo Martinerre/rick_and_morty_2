@@ -45,7 +45,6 @@ export default function Form(props) {
         }
         else { alert('Debe llenar todos los campos') }
         props.login(userData) //aqui habilita el navigation
-        console.log(userData);
     }
 
     return <div className={styles.all} >
@@ -59,7 +58,7 @@ export default function Form(props) {
             <p className={styles.danger}>{errors.pasword}</p>
             <button className={styles.button} type='submit' >Enviar</button>
             <div className={styles.img} >
-                <img srcset="klipartz.png 320w,
+                <img srcSet="klipartz.png 320w,
                             klipartz.png 480w,
                             klipartz.png 800w"
                     sizes="(max-width: 400px) 200px,

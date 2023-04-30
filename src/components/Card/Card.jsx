@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Card.module.css';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { addFav, deleteFav } from '../../redux/actions';
@@ -28,26 +28,23 @@ export function Card(props) {
          }
       });
       // eslint-disable-next-line
-   }, [myFavorites]);
+   }, [props.myFavorites]);
 
    return (
-      <div className={styles.formatoDiv}>
+      <div className={styles.formatoCard}>
          <div className={styles.top}>
             {location.pathname === '/home'
                ? <button className={styles.x} onClick={props.onClose}>X</button>
                : null}
-            
-               isFav
-                  ? (<button onClick={handleFavorite}>❤️</button>)
-                  : (<button onClick={handleFavorite}>🤍</button>)
-
+            {isFav
+               ? (<button className={styles.heart} onClick={handleFavorite}>❤️</button>)
+               : (<button className={styles.heart} onClick={handleFavorite}>🤍</button>)
+            }
             <Link to={`/detail/${props.id}`}>
                <h5 className={styles.h2}>{props.name}</h5>
             </Link>
          </div>
-
          <img src={props.image} alt="Imagen de personaje" />
-
          <div className={styles.h2pieFoto}>
             <h2 >{props.species}</h2>
             <h2 >{props.gender}</h2>

@@ -1,7 +1,10 @@
 .formatDiv {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: flex-start;
+    /* align-items: center; */
+    width:fit-content;
     align-items: center;
-    width: 100vw;
     margin: 8px;
 }

@@ -40,7 +40,7 @@ function Favorites({ myFavorites }) {
             </div> */}
             <div className={styles.cards}>
                 {myFavorites.length > 0 
-                ? (myFavorites.map((c) => (<Card id={c.id} key={c.id} name={c.name} image={c.image} />))) 
+                ? (myFavorites.map((c) => (<Card id={c.id} key={c.id} name={c.name} image={c.image} species={c.species} gender={c.gender} />))) 
                 : (<span className={styles.span}>Favoritos vacío</span>)}
             </div>
         </div>

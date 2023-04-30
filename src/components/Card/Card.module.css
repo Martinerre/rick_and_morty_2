@@ -1,4 +1,4 @@
-.formatoDiv {
+.formatoCard {
     display: flex;
     justify-content: space-between;
     border:1px solid #ffaa22;
@@ -14,7 +14,7 @@
 .h2 {
     width: auto;
     color: black;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .h2pieFoto {
@@ -54,4 +54,9 @@
     align-items: center;
     flex-direction: row-reverse;
     justify-content: space-between;
+}
+
+.heart {
+    border: #ffec64;
+    background-color: #ffec64;
 }

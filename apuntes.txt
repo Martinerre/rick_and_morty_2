@@ -3,3 +3,5 @@ server -s build
 
 Responsive:
 MDN: Imagenes adaptables
+
+ver 314 cuando el nombre ocupa 2 renglones
