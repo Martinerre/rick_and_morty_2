@@ -12,7 +12,7 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     width: 600px;
     margin: 8px;
     border:1px solid #ffaa22;
@@ -26,9 +26,8 @@
 }
 
 .formatoFoto {
-    background-image: url("/imagenes/io.jpg");
-    
-    
+    /* background-image: url("/imagenes/io.jpg"); */
+        
     display: flex;
     justify-content: center;
     border:1px solid #359aff;
@@ -39,4 +38,15 @@
     background-color: #79bbff;
     margin: 5px;
     padding: 5px;
+}
+
+ @media (max-width: 670px) {
+    .formatoDiv {
+      flex-wrap: nowrap;
+	  flex-direction: column;
+      width: auto;
+    }
+    .formatoFoto {
+        width: auto;
+    }
 }

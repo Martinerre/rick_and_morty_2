@@ -14,13 +14,13 @@ export default function Nav(props) {
                 {/* <img src="public/" alt="imagen?" /> */}
                 <h2 className={styles.h2}
                     title="Introduce un numero, luego Agregar, o elije un personaje al azar" >
-                        Elije tu personaje  </h2>
+                    Elije tu personaje  </h2>
                 <SearchBar onSearch={props.onSearch} random={props.random} />
             </div>
             <div className={styles.links}>
-                <NavLink to='/home' className={styles.button} element={<Cards />}>Home</NavLink>
-                <Link to='./About' className={styles.button} element={<About />}>About</Link>
-                <Link to='./Favorites' className={styles.button} element={<Favorites />}>Favorites</Link>
+                <NavLink to='/home' className={({ isActive }) => isActive ? styles.isActive : styles.button} element={<Cards />}>Home</NavLink>
+                <NavLink to='./About' className={({ isActive }) => isActive ? styles.isActive : styles.button} element={<About />}>About</NavLink>
+                <NavLink to='./Favorites' className={({ isActive }) => isActive ? styles.isActive : styles.button} element={<Favorites />}>Favorites</NavLink>
                 <Link to='/' className={styles.button} element={<Form />}>Logout</Link>
             </div>
         </div>

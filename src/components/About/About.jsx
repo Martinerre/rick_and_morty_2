@@ -11,10 +11,13 @@ export default function About(props) {
 
            
             <div className={styles.formatoFoto}>
-                <img src='/imagenes/io.jpg' alt='imagen'></img>
+                <div>
+                    <img src="/io.jpg" width="150" height="180" alt='imagen'></img>
+                </div>
                 <a href="https://www.linkedin.com/in/martinracedo-fullstack" target="_blank" rel="noreferrer">Mi CV en Linkedin</a>
                 {/* tarjet abre el link en una pestaña nueva */}
             </div>
         </div>
     )
 }
+
